@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Slub\Infrastructure\VCS\Github\Query;
+
+use Slub\Domain\Entity\PR\PRIdentifier;
+use Webmozart\Assert\Assert;
+
+/**
+ * @author    Samir Boulil <samir.boulil@gmail.com>
+ */
+class GithubAPIHelper
+{
+    public static function authorizationHeader(string $authToken): array
+    {
+        return ['Authorization' => sprintf('token %s', $authToken)];
+    }
+    public static function authorizationHeaderWithJWT(string $jwt): array
+    {
+        return ['Authorization' => sprintf('bearer %s', $jwt)];
+    }
+
+    public static function acceptPreviewEndpointsHeader(): array
+    {
+        return ['Accept' => 'application/vnd.github.antiope-preview+json'];
+    }
+
+    public static function breakoutPRIdentifier(PRIdentifier $PRIdentifier): array
+    {
+        preg_match('/(.+)\/(.+)\/(.+)/', $PRIdentifier->stringValue(), $matches);
+        array_shift($matches);
+        Assert::count($matches, 3);
+
+        return $matches;
+    }
+
+    public static function acceptMachineManPreviewHeader(): array
+    {
+        return ['Accept' => 'application/vnd.github.machine-man-preview+json'];
+    }
+}

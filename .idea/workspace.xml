@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4528e03-19b0-484e-ad6c-3a87ddd9c5d2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9026" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP Local">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/thecodingmachine/discovery" />
+      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/vendor/matthiasnoback/convenient-immutability" />
+      <path value="$PROJECT_DIR$/vendor/johnkary/phpunit-speedtrap" />
+      <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-loader" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/collect" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-log" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-stdlib" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-http" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-escaper" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-uri" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-validator" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-servicemanager" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/behat/behat" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/jangregor/phpstan-prophecy" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/behat/symfony2-extension" />
+      <path value="$PROJECT_DIR$/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/class-loader" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/spatie/macroable" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/donatj/mock-webserver" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/mpociot/pipeline" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/lock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/mpociot/slack-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/mpociot/phpws" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/clue/term-react" />
+      <path value="$PROJECT_DIR$/vendor/nette/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/clue/utf8-react" />
+      <path value="$PROJECT_DIR$/vendor/nette/neon" />
+      <path value="$PROJECT_DIR$/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/clue/stdio-react" />
+      <path value="$PROJECT_DIR$/vendor/nette/robot-loader" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/nette/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/nette/php-generator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/nette/di" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/vendor/botman/driver-slack" />
+      <path value="$PROJECT_DIR$/vendor/botman/studio-addons" />
+      <path value="$PROJECT_DIR$/vendor/botman/driver-web" />
+      <path value="$PROJECT_DIR$/vendor/botman/tinker" />
+      <path value="$PROJECT_DIR$/vendor/botman/studio" />
+      <path value="$PROJECT_DIR$/vendor/botman/botman" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1YljF7WHqpq3dkJSivlI2mT0KSq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/EventHandler" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Slub/Infrastructure/Persistence/Sql/Repository" />
+      <recent name="$PROJECT_DIR$/tests/Integration/Infrastructure/Persistence/Sql/Repository" />
+      <recent name="$PROJECT_DIR$/src/Slub/Infrastructure/VCS/Github/Client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/EventHandler" />
+      <recent name="$PROJECT_DIR$/tests/Unit/Domain/Entity" />
+      <recent name="$PROJECT_DIR$/src/Slub/Domain/Entity" />
+      <recent name="$PROJECT_DIR$/src/Slub/Infrastructure/Common" />
+      <recent name="$PROJECT_DIR$/tests/Acceptance/features" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.GithubAPIHelperTest.it_generates_a_authorization_header_for_a_jwt">
+    <configuration name="ClockTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner class="Tests\Integration\Infrastructure\Common\ClockTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Infrastructure/Common/ClockTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GetAccessTokenTest.it_fetches_an_access_token_for_an_app_id" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Infrastructure\VCS\Github\Client\GetAccessTokenTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/Client/GetAccessTokenTest.php" method="it_fetches_an_access_token_for_an_app_id" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GithubAPIHelperTest.it_generates_a_accept_header_for_machine_man_preview_endpoints" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Integration\Infrastructure\VCS\Github\Query\GithubAPIHelperTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Infrastructure/VCS/Github/Query/GithubAPIHelperTest.php" method="it_generates_a_accept_header_for_machine_man_preview_endpoints" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GithubAPIHelperTest.it_generates_a_authorization_header_for_a_jwt" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Integration\Infrastructure\VCS\Github\Query\GithubAPIHelperTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Infrastructure/VCS/Github/Query/GithubAPIHelperTest.php" method="it_generates_a_authorization_header_for_a_jwt" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NewInstallationEventHandlerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Infrastructure\VCS\Github\EventHandler\NewInstallationEventHandlerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/EventHandler/NewInstallationEventHandlerTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NewInstallationEventHandlerTest.it_gather_app_installations_and_saves_them" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Infrastructure\VCS\Github\EventHandler\NewInstallationEventHandlerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/EventHandler/NewInstallationEventHandlerTest.php" method="it_gather_app_installations_and_saves_them" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType">
+      <BehatRunner scenario="" />
+      <CommandLine workingDirectory="$PROJECT_DIR$">
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP Local" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="debug ci status" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/bin/console" scriptParameters="slub:debug:ci-status https://github.com/akeneo/pim-community-dev/pull/11869">
+      <CommandLine workingDirectory="$PROJECT_DIR$">
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP Local" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.debug ci status" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
+      <item itemvalue="PHPUnit.ClockTest" />
+      <item itemvalue="PHPUnit.NewInstallationEventHandlerTest.it_gather_app_installations_and_saves_them" />
+      <item itemvalue="PHPUnit.NewInstallationEventHandlerTest" />
+      <item itemvalue="PHPUnit.GetAccessTokenTest.it_fetches_an_access_token_for_an_app_id" />
+      <item itemvalue="PHPUnit.GithubAPIHelperTest.it_generates_a_accept_header_for_machine_man_preview_endpoints" />
+      <item itemvalue="PHPUnit.GithubAPIHelperTest.it_generates_a_authorization_header_for_a_jwt" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.GithubAPIHelperTest.it_generates_a_authorization_header_for_a_jwt" />
+        <item itemvalue="PHPUnit.GetAccessTokenTest.it_fetches_an_access_token_for_an_app_id" />
+        <item itemvalue="PHPUnit.GithubAPIHelperTest.it_generates_a_accept_header_for_machine_man_preview_endpoints" />
+        <item itemvalue="PHPUnit.NewInstallationEventHandlerTest" />
+        <item itemvalue="PHPUnit.NewInstallationEventHandlerTest.it_gather_app_installations_and_saves_them" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4528e03-19b0-484e-ad6c-3a87ddd9c5d2" name="Default Changelist" comment="" />
+      <created>1583523968969</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583523968969</updated>
+      <workItem from="1583523972640" duration="11108000" />
+      <workItem from="1583846919816" duration="7744000" />
+      <workItem from="1584271077405" duration="14839000" />
+      <workItem from="1584875553199" duration="974000" />
+      <workItem from="1584876653852" duration="856000" />
+      <workItem from="1585662348779" duration="2920000" />
+      <workItem from="1585761459144" duration="5035000" />
+      <workItem from="1590423172344" duration="1502000" />
+      <workItem from="1595407471933" duration="1022000" />
+      <workItem from="1600513104137" duration="9461000" />
+      <workItem from="1600603388792" duration="3568000" />
+      <workItem from="1601065913509" duration="1650000" />
+      <workItem from="1601796883607" duration="15483000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1601830182568">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601830182568" />
+    <state x="583" y="294" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601834878293">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="583" y="294" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601834878293" />
+    <state x="565" y="23" width="766" height="1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601828185030">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="565" y="23" width="766" height="1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601828185030" />
+    <state x="633" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601837419934">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="633" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601837419934" />
+    <state x="709" y="320" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1601832784102">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="709" y="320" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601832784102" />
+    <state x="773" y="253" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1601838024316">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="773" y="253" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601838024316" />
+    <state x="601" y="203" key="#put-to-review.feature::Put_a_PR_to_review_on_an_unsupported_channel" timestamp="1600522798978">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="601" y="203" key="#put-to-review.feature::Put_a_PR_to_review_on_an_unsupported_channel/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1600522798978" />
+    <state width="723" height="466" key="DebuggerActiveHint" timestamp="1600523177133">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="723" height="466" key="DebuggerActiveHint/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1600523177133" />
+    <state x="109" y="121" width="1592" height="857" key="DiffContextDialog" timestamp="1600605041009">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="109" y="121" width="1592" height="857" key="DiffContextDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1600605041009" />
+    <state width="1920" height="434" key="GridCell.Tab.0.bottom" timestamp="1601839767132">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.0.bottom/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767132" />
+    <state width="1920" height="434" key="GridCell.Tab.0.center" timestamp="1601839767131">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.0.center/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767131" />
+    <state width="1920" height="434" key="GridCell.Tab.0.left" timestamp="1601839767131">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.0.left/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767131" />
+    <state width="1920" height="434" key="GridCell.Tab.0.right" timestamp="1601839767131">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.0.right/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767131" />
+    <state width="1920" height="434" key="GridCell.Tab.1.bottom" timestamp="1601839767133">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.1.bottom/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767133" />
+    <state width="1920" height="434" key="GridCell.Tab.1.center" timestamp="1601839767132">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.1.center/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767132" />
+    <state width="1920" height="434" key="GridCell.Tab.1.left" timestamp="1601839767132">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.1.left/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767132" />
+    <state width="1920" height="434" key="GridCell.Tab.1.right" timestamp="1601839767132">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1920" height="434" key="GridCell.Tab.1.right/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839767132" />
+    <state x="91" y="186" key="NewPhpClassDialog" timestamp="1601836489759">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="91" y="186" key="NewPhpClassDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601836489759" />
+    <state x="405" y="190" key="SettingsEditor" timestamp="1601825955195">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="405" y="190" key="SettingsEditor/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601825955195" />
+    <state width="536" height="429" key="SwitcherDM" timestamp="1601839186684">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1792.1097@0.23.1792.1097" timestamp="1595407563018" />
+    <state width="536" height="429" key="SwitcherDM/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839186684" />
+    <state x="427" y="281" key="VcsDiffUtil.ChangesDialog" timestamp="1600519605397">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="427" y="281" key="VcsDiffUtil.ChangesDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1600519605397" />
+    <state x="603" y="306" width="942" height="697" key="find.popup" timestamp="1601838746093">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="603" y="306" width="942" height="697" key="find.popup/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601838746093" />
+    <state x="525" y="162" width="642" height="597" key="refactoring.ChangeSignatureDialog" timestamp="1600609322362">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="525" y="162" width="642" height="597" key="refactoring.ChangeSignatureDialog/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1600609322362" />
+    <state x="601" y="259" width="718" height="652" key="search.everywhere.popup" timestamp="1601839574480">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="561" y="268" width="670" height="676" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1595407547349" />
+    <state x="601" y="259" width="718" height="652" key="search.everywhere.popup/0.23.1920.1057/63.1103.1792.1097@0.23.1920.1057" timestamp="1601839574480" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Functional/PRMergedTest.php</url>
+          <line>41</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Slub/Infrastructure/VCS/Github/EventHandler/PullRequestReviewEventHandler.php</url>
+          <line>93</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Integration/Infrastructure/UI/CLI/DebugCIStatusCLITest.php</url>
+          <line>44</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Slub/Infrastructure/VCS/Github/Query/CIStatus/GetStatusChecksStatus.php</url>
+          <line>83</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/Context/PublishRemindersContext.php</url>
+          <line>226</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/helpers/ChatClientSpyTest.php</url>
+          <line>60</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/helpers/ChatClientSpyTest.php</url>
+          <line>97</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Slub/Infrastructure/Common/Clock.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/Context/PutPRToReviewContext.php</url>
+          <line>209</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/Context/PutPRToReviewContext.php</url>
+          <line>183</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Acceptance/Context/PutPRToReviewContext.php</url>
+          <line>168</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Slub/Application/PutPRToReview/PutPRToReviewHandler.php</url>
+          <line>113</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Slub/Domain/Entity/Channel/ChannelIdentifier.php</url>
+          <line>21</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Unit/Infrastructure/VCS/Github/Client/GetAccessTokenTest.php</url>
+          <line>61</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PhpBehatConfigurationType">
+        <watch expression="$pr-&gt;normalize()['WORKSPACE_IDS']" language="PHP" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

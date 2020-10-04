@@ -1,0 +1,341 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    SUPPORTED_REPOSITORIES: 'akeneo/pim-community-dev,SamirBoulil/slub'
+    SUPPORTED_WORKSPACES: 'akeneo,general'
+    SUPPORTED_CI_CHECKS: 'Travis CI - Pull Request,ci/circleci: back_behat_legacy'
+    GITHUB_URI: 'https://api.github.com'
+    BOT_USER_ID: 'my_bot_user_id'
+    locale: 'en'
+    slub.infrastructure.persistence.file_database: '%kernel.project_dir%/var/persistence/%kernel.environment%/pr_repository.json'
+    slub.infrastructure.chat.slack.base_uri: 'https://slack.com'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: false      # Automatically injects dependencies in your services.
+        autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
+        public: true
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    #Slub\:
+    #    resource: '../src/Slub/*'
+    #    exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # Handlers
+    slub.application.put_pr_to_review.put_pr_to_review_handler:
+        class: Slub\Application\PutPRToReview\PutPRToReviewHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.query.is_supported'
+            - '@logger'
+
+    slub.application.new_review.new_review_handler:
+        class: Slub\Application\NewReview\NewReviewHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.query.is_supported'
+            - '@logger'
+
+    slub.application.ci_status_update.ci_status_update_handler:
+        class: Slub\Application\CIStatusUpdate\CIStatusUpdateHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.query.is_supported'
+            - '@logger'
+
+    slub.application.close_pr.close_pr_handler:
+        class: Slub\Application\ClosePR\ClosePRHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.query.is_supported'
+            - '@logger'
+
+    slub.application.unpublish_pr.unpublish_pr_handler:
+        class: Slub\Application\UnpublishPR\UnpublishPRHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@logger'
+
+    slub.application.notify.notify_author:
+        class: Slub\Application\Notify\NotifyAuthor
+        arguments:
+            - '@slub.infrastructure.persistence.get_message_ids_for_pr'
+            - '@slub.infrastructure.chat.slack.slack_client'
+            - '@logger'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    slub.application.notify.notify_squad:
+        class: Slub\Application\Notify\NotifySquad
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.chat.slack.slack_client'
+            - '@logger'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    slub.application.publish_reminders.publish_reminders_handler:
+        class: Slub\Application\PublishReminders\PublishRemindersHandler
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.chat.slack.slack_client'
+            - '@logger'
+            - '@slub.infrastructure.common.query.clock'
+
+    # Infrastructure
+    ## Common
+    slub.infrastructure.common.query.clock:
+        class: Slub\Infrastructure\Common\Clock
+
+    ## Persistence
+    slub.infrastructure.persistence.sql.database_connection:
+        class: Doctrine\DBAL\Connection
+        factory: 'Slub\Infrastructure\Persistence\Sql\ConnectionFactory::create'
+        arguments:
+            - '%env(DATABASE_URL)%'
+
+    slub.infrastructure.persistence.pr_repository:
+        class: Slub\Infrastructure\Persistence\Sql\Repository\SqlPRRepository
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+            - '@event_dispatcher'
+
+    slub.infrastructure.persistence.get_message_ids_for_pr:
+        class: Slub\Infrastructure\Persistence\Sql\Query\SqlGetMessageIdsForPR
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+
+    slub.infrastructure.persistence.get_average_time_to_merge:
+        class: Slub\Infrastructure\Persistence\Sql\Query\SqlGetAverageTimeToMerge
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+
+    slub.infrastructure.query.is_supported:
+        class: Slub\Infrastructure\Persistence\InMemory\Query\InMemoryIsSupported
+        arguments:
+            - '%env(SUPPORTED_REPOSITORIES)%'
+            - '%env(SUPPORTED_WORKSPACES)%'
+
+    slub.infrastructure.persistence.delivered_event_repository:
+        class: Slub\Infrastructure\Persistence\Sql\Repository\SqlDeliveredEventRepository
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+
+    slub.infrastructure.persistence.has_event_already_been_delivered:
+        class: Slub\Infrastructure\Persistence\Sql\Query\SqlHasEventAlreadyBeenDelivered
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+
+    ## Chat
+    slub.infrastructure.chat.slack.slub_bot:
+        class: Slub\Infrastructure\Chat\Slack\SlubBot
+        arguments:
+            - '@slub.application.put_pr_to_review.put_pr_to_review_handler'
+            - '@slub.application.unpublish_pr.unpublish_pr_handler'
+            - '@slub.infrastructure.chat.slack.slack_client'
+            - '@slub.infrastructure.query.get_public_channel_information'
+            - '@slub.infrastructure.query.get_private_channel_information'
+            - '@slub.infrastructure.vcs.github.query.get_pr_info'
+            - '@logger'
+            - '%env(SLACK_TOKEN)%'
+            - '%env(BOT_USER_ID)%'
+
+    slub.infrastructure.chat.slack.slub_bot_action:
+        class: Slub\Infrastructure\Chat\Slack\SlubBotAction
+        arguments:
+            - '@slub.infrastructure.chat.slack.slub_bot'
+
+    slub.infrastructure.query.get_public_channel_information:
+        class: Slub\Infrastructure\Chat\Slack\GetPublicChannelInformation
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(SLACK_TOKEN)%'
+            -
+    slub.infrastructure.query.get_private_channel_information:
+        class: Slub\Infrastructure\Chat\Slack\GetPrivateChannelInformation
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(SLACK_TOKEN)%'
+
+    slub.infrastructure.query.get_bot_reactions_for_message_and_user:
+        class: Slub\Infrastructure\Chat\Slack\GetBotReactionsForMessageAndUser
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(SLACK_TOKEN)%'
+
+    slub.infrastructure.query.get_bot_user_id:
+        class: Slub\Infrastructure\Chat\Slack\GetBotUserId
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(SLACK_TOKEN)%'
+
+    slub.infrastructure.chat.slack.slack_client:
+        class: Slub\Infrastructure\Chat\Slack\SlackClient
+        arguments:
+            - '@slub.infrastructure.query.get_bot_user_id'
+            - '@slub.infrastructure.query.get_bot_reactions_for_message_and_user'
+            - '@slub.infrastructure.http.guzzle_client'
+            - '@logger'
+            - '%env(SLACK_TOKEN)%'
+            - '%env(BOT_USER_ID)%'
+
+    slub.infrastructure.http.guzzle_client:
+        class: GuzzleHttp\Client
+
+    ## VCS
+    slub.infrastructure.vcs.github.client.app_installation_repository:
+        class: Slub\Infrastructure\Persistence\Sql\Repository\SqlAppInstallationRepository
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+
+    slub.infrastructure.vcs.github.client.client_factory:
+        class: Slub\Infrastructure\VCS\Github\Client\GithubClientFactory
+        arguments:
+            - 'AccessTokenRepository'
+
+    slub.infrastructure.vcs.github.new_event_action:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\NewEventAction
+        arguments:
+            - '@slub.infrastructure.vcs.github.event_handler_registry'
+            - '@slub.infrastructure.persistence.has_event_already_been_delivered'
+            - '@slub.infrastructure.persistence.delivered_event_repository'
+            - '@logger'
+            - '%env(GITHUB_WEBHOOK_SECRET)%'
+
+    slub.infrastructure.vcs.github.event_handler_registry:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\EventHandlerRegistry
+        calls:
+            - method: addEventHandler
+              arguments:
+                  - '@slub.infrastructure.vcs.github.event_handler.new_review'
+            - method: addEventHandler
+              arguments:
+                  - '@slub.infrastructure.vcs.github.event_handler.check_run'
+            - method: addEventHandler
+              arguments:
+                  - '@slub.infrastructure.vcs.github.event_handler.pr_closed'
+            - method: addEventHandler
+              arguments:
+                  - '@slub.infrastructure.vcs.github.event_handler.status_updated'
+
+    slub.infrastructure.vcs.github.event_handler.new_review:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\PullRequestReviewEventHandler
+        arguments:
+            - '@slub.application.new_review.new_review_handler'
+
+    slub.infrastructure.vcs.github.event_handler.check_run:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\CheckRunEventHandler
+        arguments:
+            - '@slub.application.ci_status_update.ci_status_update_handler'
+            - '@slub.infrastructure.vcs.github.query.get_pr_info'
+
+    slub.infrastructure.vcs.github.event_handler.status_updated:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\StatusUpdatedEventHandler
+        arguments:
+            - '@slub.application.ci_status_update.ci_status_update_handler'
+            - '@slub.infrastructure.vcs.github.query.find_pr_number'
+            - '@slub.infrastructure.vcs.github.query.get_ci_status'
+
+    slub.infrastructure.vcs.github.event_handler.pr_closed:
+        class: Slub\Infrastructure\VCS\Github\EventHandler\PRClosedEventHandler
+        arguments:
+            - '@slub.application.close_pr.close_pr_handler'
+
+    slub.infrastructure.vcs.github.query.get_vcs_status_from_github:
+        class: Slub\Infrastructure\VCS\Github\Query\GetVCSStatusFromGithub
+        arguments:
+            - '@slub.infrastructure.vcs.github.query.get_pr_details'
+            - '@slub.infrastructure.vcs.github.query.find_reviews'
+            - '@slub.infrastructure.vcs.github.query.get_ci_status'
+            - '@logger'
+
+    slub.infrastructure.vcs.github.query.get_pr_details:
+        class: Slub\Infrastructure\VCS\Github\Query\GetPRDetails
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(GITHUB_TOKEN)%'
+
+    slub.infrastructure.vcs.github.query.find_reviews:
+        class: Slub\Infrastructure\VCS\Github\Query\FindReviews
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(GITHUB_TOKEN)%'
+
+    slub.infrastructure.vcs.github.query.get_ci_status:
+        class: Slub\Infrastructure\VCS\Github\Query\GetCIStatus
+        arguments:
+            - '@slub.infrastructure.vcs.github.query.ci_status.get_check_run_status'
+            - '@slub.infrastructure.vcs.github.query.ci_status.get_status_check_status'
+            - '@logger'
+
+    slub.infrastructure.vcs.github.query.ci_status.get_check_run_status:
+        class: Slub\Infrastructure\VCS\Github\Query\CIStatus\GetCheckRunStatus
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(GITHUB_TOKEN)%'
+            - '%env(SUPPORTED_CI_CHECKS)%'
+            - '%GITHUB_URI%'
+            - '@logger'
+
+    slub.infrastructure.vcs.github.query.ci_status.get_status_check_status:
+        class: Slub\Infrastructure\VCS\Github\Query\CIStatus\GetStatusChecksStatus
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(GITHUB_TOKEN)%'
+            - '%env(SUPPORTED_CI_CHECKS)%'
+            - '%GITHUB_URI%'
+            - '@logger'
+
+    slub.infrastructure.vcs.github.query.find_pr_number:
+        class: Slub\Infrastructure\VCS\Github\Query\FindPRNumber
+        arguments:
+            - '@slub.infrastructure.http.guzzle_client'
+            - '%env(GITHUB_TOKEN)%'
+
+    slub.infrastructure.vcs.github.query.get_pr_info:
+        class: Slub\Infrastructure\VCS\Github\Query\GetPRInfo
+        arguments:
+            - '@slub.infrastructure.vcs.github.query.get_pr_details'
+            - '@slub.infrastructure.vcs.github.query.find_reviews'
+            - '@slub.infrastructure.vcs.github.query.get_ci_status'
+
+    ## UI
+    slub.infrastructure.ui.http.list_prs_action:
+        class: Slub\Infrastructure\UI\Http\ListPRsAction
+        arguments:
+            - '@slub.infrastructure.persistence.pr_repository'
+            - '@slub.infrastructure.persistence.get_average_time_to_merge'
+
+    ## CLI
+    slub.infrastructure.installer.cli.InstallerCLI:
+        class: Slub\Infrastructure\Installer\CLI\InstallerCLI
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+        tags:
+            - { name: console.command }
+
+    slub.infrastructure.installer.cli.publish_reminders:
+        class: Slub\Infrastructure\UI\CLI\PublishRemindersCLI
+        arguments:
+            - '@slub.application.publish_reminders.publish_reminders_handler'
+        tags:
+            - { name: console.command }
+
+    slub.infrastructure.installer.cli.purge_delivered_events:
+        class: Slub\Infrastructure\UI\CLI\PurgeDeliveredEventsCLI
+        arguments:
+            - '@slub.infrastructure.persistence.sql.database_connection'
+        tags:
+            - { name: console.command }
+
+    slub.infrastructure.installer.cli.debug_ci_status:
+        class: Slub\Infrastructure\UI\CLI\DebugCIStatusCLI
+        arguments:
+            - '@slub.infrastructure.vcs.github.query.get_pr_info'
+        tags:
+            - { name: console.command }
